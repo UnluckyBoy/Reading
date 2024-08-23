@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="128dp"
+    android:layout_width="match_parent"
     android:layout_height="256dp"
-    android:background="@drawable/lay_light"
-    android:orientation="vertical">
-
-    <!-- 图片 -->
-    <ImageView
-        android:id="@+id/itemImageView"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:contentDescription="@string/text_test"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/warning"
-        android:layout_alignParentTop="true"/>
-
-    <TextView
-        android:id="@+id/itemScoreView"
-        android:layout_width="wrap_content"
+    android:background="@drawable/lay_light">
+    <RelativeLayout
+        android:id="@+id/imageRelativeLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/num_test"
-        android:layout_below="@id/itemImageView"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="-32dp" />
-    <TextView
-        android:id="@+id/itemTypeView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/num_test"
-        android:layout_below="@id/itemImageView"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="-32dp" />
+        android:padding="4dp">
+        <!-- 图片 -->
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:contentDescription="@string/text_test"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/warning"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/itemScoreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_test"
+            android:layout_below="@id/itemImageView"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="-24dp" />
+        <TextView
+            android:id="@+id/itemTypeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_test"
+            android:layout_below="@id/itemImageView"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="-24dp" />
+    </RelativeLayout>
 
     <!-- 推荐度标签 -->
     <ImageView
         android:id="@+id/itemRatingView"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:contentDescription="@string/text_test"
         android:layout_alignParentEnd="true"
-        android:layout_below="@id/itemImageView"
+        android:layout_below="@id/imageRelativeLayout"
         android:src="@mipmap/hot"/>
-    <!--标题-->
-    <TextView
-        android:id="@+id/itemNameView"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/itemRatingView"
-        android:text="@string/text_test"
-        android:textStyle="bold"
-        android:textSize="18sp" />
-    <!-- 简介 -->
-    <TextView
-        android:id="@+id/itemDescriptionView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/itemNameView"
-        android:text="@string/text_test"
-        android:textSize="16sp" />
+        android:padding="6dp">
+        <!--标题-->
+        <TextView
+            android:id="@+id/itemNameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_test"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+        <!-- 简介 -->
+        <TextView
+            android:id="@+id/itemDescriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/itemNameView"
+            android:text="@string/text_test"
+            android:textSize="16sp" />
+    </RelativeLayout>
 </RelativeLayout>

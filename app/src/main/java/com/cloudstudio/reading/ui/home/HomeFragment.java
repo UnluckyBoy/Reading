@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -100,7 +101,11 @@ public class HomeFragment extends Fragment {
     /*绑定list数据*/
     private void initMainListView(View root){
         mRecyclerView=root.findViewById(R.id.mainList);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(root.getContext(), 2); // 假设我们想要一个3列的宫格
+        // 将 GridLayoutManager 设置给 RecyclerView
+        mRecyclerView.setLayoutManager(gridLayoutManager);
+        //mRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
         List<BookBean> list=new ArrayList<>();
         BookBean bookBean=new BookBean();
@@ -129,6 +134,7 @@ public class HomeFragment extends Fragment {
 //
 //            }
 //        });
+
         ImageItemAdapter itemAdapter=new ImageItemAdapter(getActivity(),list);
         itemAdapter.SetOnImageItemClickListener(new ImageItemAdapter.OnImageItemClickListener() {
             @Override

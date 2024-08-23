@@ -14,7 +14,16 @@ public class BookBean {
     private String writer;
     private String type;
     private String hot;
+    private String des;
     private List<BookBean> Book;
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
 
     public String getId() {
         return id;

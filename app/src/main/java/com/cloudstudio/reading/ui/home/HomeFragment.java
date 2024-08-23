@@ -17,6 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.cloudstudio.reading.R;
 import com.cloudstudio.reading.adapter.BannerImageAdapter;
+import com.cloudstudio.reading.adapter.ImageItemAdapter;
 import com.cloudstudio.reading.adapter.ItemAdapter;
 import com.cloudstudio.reading.databinding.FragmentHomeBinding;
 import com.cloudstudio.reading.util.BannerDataInfo;
@@ -114,17 +115,25 @@ public class HomeFragment extends Fragment {
         bookBean.setWriter("清风");
         bookBean.setType("武侠");
         bookBean.setHot("999");
+        bookBean.setDes("主人公杨过自然而然地走上了非正统的人生道路，入了“道流”。其特点是“至情至性，实现自我”，即把个人的利益、情感、个性及人格尊严置于人生首位，作为首要目标，亦作为待人处事，评价是非的首要原则。书中将杨过对郭靖的杀父之仇与疼惜之恩难以取舍的复杂心理刻画得维妙维肖；他与“姑姑”小龙女的情感纠葛和他对江湖世事的渴望又令他挣扎不已……");
         list.add(bookBean);
-        ItemAdapter itemAdapter = new ItemAdapter(getActivity(),list);
-        itemAdapter.SetOnItemClickListener(new ItemAdapter.OnItemClickListener() {
+//        ItemAdapter itemAdapter = new ItemAdapter(getActivity(),list);
+//        itemAdapter.SetOnItemClickListener(new ItemAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Toast.makeText(root.getContext(),"点击了:"+position,Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onItemLongClick(View view, int position) {
+//
+//            }
+//        });
+        ImageItemAdapter itemAdapter=new ImageItemAdapter(getActivity(),list);
+        itemAdapter.SetOnImageItemClickListener(new ImageItemAdapter.OnImageItemClickListener() {
             @Override
-            public void onItemClick(View view, int position) {
+            public void onImageItemClick(View view, int position) {
                 Toast.makeText(root.getContext(),"点击了:"+position,Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onItemLongClick(View view, int position) {
-
             }
         });
         mRecyclerView.setAdapter(itemAdapter);

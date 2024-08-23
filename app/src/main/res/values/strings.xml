@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">好读</string>
+    <string name="title_home">书城</string>
+    <string name="title_dashboard">分类</string>
+    <string name="title_notifications">消息</string>
+    <string name="con_text">金币余额(币)</string>
+    <string name="exchange">提取兑换</string>
+    <string name="history">阅览历史</string>
+    <string name="message">我的消息</string>
+    <string name="other">其他</string>
+
+    <string name="text_test">清风</string>
+    <string name="num_test">99999+</string>
+    <string name="btn_des">图片按钮</string>
+</resources>

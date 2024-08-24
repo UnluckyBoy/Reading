@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.cloudstudio.reading.R;
 import com.cloudstudio.reading.util.BookBean;
-import com.squareup.picasso.Picasso;
+import com.cloudstudio.reading.util.GlideRoundCornersTransUtils;
 
 import java.util.List;
 
@@ -70,10 +72,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     private void SetPic(ItemAdapter.ViewHolder viewHolder,String path){
         if(path!=null){
-            Picasso.get()
+            Glide.with(mActivity)
                     .load(path)
+                    .centerCrop()
                     .placeholder(R.mipmap.warning)
-                    //.error(R.mipmap.warning)
+                    .error(R.mipmap.warning)
                     .into(viewHolder.book_pic);
         }
     }

@@ -1,6 +1,8 @@
 package com.cloudstudio.reading.adapter;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.RectF;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +12,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.cloudstudio.reading.R;
 import com.cloudstudio.reading.util.BookBean;
-import com.squareup.picasso.Picasso;
+import com.cloudstudio.reading.util.DipPx;
+import com.cloudstudio.reading.util.GlideRoundCornersTransUtils;
 
+import java.security.MessageDigest;
 import java.util.List;
 
 /**
@@ -67,10 +76,15 @@ public class ImageItemAdapter extends RecyclerView.Adapter<ImageItemAdapter.View
 
     private void SetPic(ImageItemAdapter.ViewHolder viewHolder,String path){
         if(path!=null){
-            Picasso.get()
+            Glide.with(mActivity)
                     .load(path)
-                    .placeholder(R.mipmap.warning)
-                    .error(R.mipmap.warning)
+                    .centerCrop()
+                    .apply(new RequestOptions()
+                            .placeholder(R.mipmap.warning)
+                            .error(R.mipmap.warning)
+                            .transform(new GlideRoundCornersTransUtils(
+                                    mActivity,
+                                    DipPx.dip2px(mActivity, 6),true, false, true, false)))
                     .into(viewHolder.bookPic);
         }
     }

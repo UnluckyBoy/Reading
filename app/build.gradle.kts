@@ -52,7 +52,8 @@ dependencies {
     //下拉刷新库
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     //图片加载库
-    implementation("com.squareup.picasso:picasso:2.8")//2.71828
+    //implementation("com.squareup.picasso:picasso:2.8")//2.71828
+    implementation("com.github.bumptech.glide:glide:4.16.0")//4.16.0
 
     //网络
     implementation("com.squareup.retrofit2:retrofit:2.11.0")

@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="4dp">
         <!-- 图片 -->
+
         <ImageView
             android:id="@+id/itemImageView"
             android:layout_width="match_parent"
@@ -50,6 +51,7 @@
         android:layout_height="16dp"
         android:contentDescription="@string/text_test"
         android:layout_alignParentEnd="true"
+        android:layout_marginEnd="6dp"
         android:layout_below="@id/imageRelativeLayout"
         android:src="@mipmap/hot"/>
 

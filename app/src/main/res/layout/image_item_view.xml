@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/itemImageView"
             android:layout_width="match_parent"
-            android:layout_height="128dp"
+            android:layout_height="160dp"
             android:contentDescription="@string/text_test"
             android:scaleType="centerCrop"
             android:src="@mipmap/warning"
@@ -29,7 +29,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="-24dp" />
+            android:layout_marginTop="-18dp" />
         <TextView
             android:id="@+id/itemTypeView"
             android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
             android:textSize="14sp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="-24dp" />
+            android:layout_marginTop="-18dp" />
     </RelativeLayout>
 
     <!-- 推荐度标签 -->
@@ -50,7 +50,7 @@
         android:layout_height="16dp"
         android:contentDescription="@string/text_test"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="6dp"
+        android:layout_marginEnd="2dp"
         android:layout_below="@id/imageRelativeLayout"
         android:src="@mipmap/hot"/>
 

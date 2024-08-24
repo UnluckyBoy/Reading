@@ -116,7 +116,7 @@ public class HomeFragment extends Fragment {
          * http://49.234.181.81:8080/upload/HeadIcon/matrix.png
          * https://wimg.588ku.com/gif620/21/01/12/dc1f33b9ecd1da2b1a4a125929ed5762.gif
          */
-        bookBean.setPic("https://img2.baidu.com/it/u=180472719,1598977165&fm=253&fmt=auto&app=138&f=JPEG?w=516&h=500");
+        bookBean.setPic("https://img2.baidu.com/it/u=1206333291,1088269936&fm=253&fmt=auto&app=120&f=JPEG?w=480&h=640");
         bookBean.setWriter("清风");
         bookBean.setType("武侠");
         bookBean.setHot("999");

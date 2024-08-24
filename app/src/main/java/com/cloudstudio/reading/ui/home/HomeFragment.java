@@ -29,6 +29,7 @@ import com.youth.banner.listener.OnBannerListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
@@ -37,6 +38,9 @@ public class HomeFragment extends Fragment {
     private List<BannerDataInfo> mBannerDataList;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView mRecyclerView;
+    List<BookBean> list;
+    private boolean isLoading;
+    private int visibleItemCount, totalItemCount, pastVisiblesItems;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -80,7 +84,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    /*刷新页面*/
+    /*下拉刷新页面*/
     private void initRefreshView(View root){
         swipeRefreshLayout=(SwipeRefreshLayout)root.findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -98,6 +102,23 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    /** 上拉加载 */
+    private void loadMore(View root){
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int lastVisibleItemPosition = ((GridLayoutManager) Objects.requireNonNull(recyclerView.getLayoutManager())).findLastVisibleItemPosition();
+                if (lastVisibleItemPosition >= list.size() - 1) {
+                    // 列表滚动到底部，加载更多数据
+                    isLoading = true;
+                    //loadMoreItems();
+                    Toast.makeText(root.getContext(), "加载成功",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
     /*绑定list数据*/
     private void initMainListView(View root){
         mRecyclerView=root.findViewById(R.id.mainList);
@@ -107,7 +128,7 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(gridLayoutManager);
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
-        List<BookBean> list=new ArrayList<>();
+        list=new ArrayList<>();
         BookBean bookBean=new BookBean();
         bookBean.setId("1");
         bookBean.setName("测试");

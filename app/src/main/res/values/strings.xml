@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">好读</string>
-    <string name="title_home">书城</string>
-    <string name="title_dashboard">分类</string>
-    <string name="title_notifications">消息</string>
+    <string name="title_home">主页书城</string>
+    <string name="title_dashboard">热门分类</string>
+    <string name="title_notifications">个人中心</string>
     <string name="con_text">金币余额(币)</string>
     <string name="exchange">提取兑换</string>
     <string name="history">阅览历史</string>

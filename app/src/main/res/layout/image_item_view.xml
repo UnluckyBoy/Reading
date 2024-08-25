@@ -52,7 +52,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="2dp"
         android:layout_below="@id/imageRelativeLayout"
-        android:src="@mipmap/hot"/>
+        android:src="@mipmap/hottest"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

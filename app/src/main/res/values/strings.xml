@@ -8,8 +8,19 @@
     <string name="history">阅览历史</string>
     <string name="message">我的消息</string>
     <string name="other">其他</string>
-    <string name="btn_man">男生</string>
-    <string name="btn_woman">女生</string>
+    <string name="btn_man">男频</string>
+    <string name="btn_woman">女频</string>
+
+    <string name="classificationBtnCity">都市</string>
+    <string name="classificationBtnXia">武侠</string>
+    <string name="classificationBtnXian">奇幻仙侠</string>
+    <string name="classificationBtnHistory">历史</string>
+    <string name="classificationBtnGame">游戏体育</string>
+    <string name="classificationBtnStrange">玄幻</string>
+    <string name="classificationBtnScience">科幻</string>
+    <string name="classificationBtnFarm">种田</string>
+    <string name="classificationBtnDoomsday">末世</string>
+
 
     <string name="text_test">清风</string>
     <string name="num_test">99999+</string>

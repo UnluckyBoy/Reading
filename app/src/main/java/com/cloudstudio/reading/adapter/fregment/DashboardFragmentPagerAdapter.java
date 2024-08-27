@@ -53,7 +53,7 @@ public class DashboardFragmentPagerAdapter extends  RecyclerView.Adapter<Dashboa
 
         ViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.classification_man_fragment_title);
+            textView = itemView.findViewById(R.id.classificationFragmentTitle);
         }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.percentlayout.widget.PercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -47,8 +47,11 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="80%"
+        app:layout_heightPercent="100%"
+        android:layout_alignParentEnd="true"
         android:layout_below="@id/classification_btn_lay"
         android:layout_marginTop="2dp"
         android:background="@drawable/lay_light">
@@ -63,4 +66,4 @@
             app:layout_constraintStart_toStartOf="parent">
         </androidx.viewpager2.widget.ViewPager2>
     </RelativeLayout>
-</RelativeLayout>
+</androidx.percentlayout.widget.PercentRelativeLayout>

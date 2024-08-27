@@ -1,17 +1,12 @@
 package com.cloudstudio.reading.ui.dashboard;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
@@ -21,7 +16,6 @@ import com.cloudstudio.reading.adapter.fregment.DashboardFragmentPagerAdapter;
 import com.cloudstudio.reading.databinding.FragmentDashboardBinding;
 import com.cloudstudio.reading.util.ElementUtil;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -59,6 +53,7 @@ public class DashboardFragment extends Fragment {
         viewPager = binding.viewPager2;
         _manText=binding.classificationTextMan;
         _woManText=binding.classificationTexWotMan;
+
         _manText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,9 +70,8 @@ public class DashboardFragment extends Fragment {
     }
 
     private void initDashboardFragment(View root){
-        List<String> items = new ArrayList<>();
-        items=Arrays.asList(root.getContext().getString(R.string.btn_man),root.getContext().getString(R.string.btn_woman));
-        DashboardFragmentPagerAdapter adapter = new DashboardFragmentPagerAdapter(items, R.layout.fragment_classification_man);
+        List<String> items=Arrays.asList(root.getContext().getString(R.string.btn_man),root.getContext().getString(R.string.btn_woman));
+        DashboardFragmentPagerAdapter adapter = new DashboardFragmentPagerAdapter(items, R.layout.fragment_classification);
         viewPager.setAdapter(adapter);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

@@ -61,4 +61,6 @@ dependencies {
 
     //圆形图像view
     implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation("androidx.percentlayout:percentlayout:1.0.0")
 }

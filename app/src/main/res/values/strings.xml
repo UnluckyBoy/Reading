@@ -8,6 +8,8 @@
     <string name="history">阅览历史</string>
     <string name="message">我的消息</string>
     <string name="other">其他</string>
+    <string name="btn_man">男生</string>
+    <string name="btn_woman">女生</string>
 
     <string name="text_test">清风</string>
     <string name="num_test">99999+</string>

@@ -1,12 +1,17 @@
 package com.cloudstudio.reading.ui.dashboard;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
@@ -14,6 +19,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.cloudstudio.reading.R;
 import com.cloudstudio.reading.adapter.fregment.DashboardFragmentPagerAdapter;
 import com.cloudstudio.reading.databinding.FragmentDashboardBinding;
+import com.cloudstudio.reading.util.ElementUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +30,7 @@ public class DashboardFragment extends Fragment {
     private FragmentDashboardBinding binding;
     private ViewPager2 viewPager;
     private DashboardFragmentPagerAdapter adapter;
+    private TextView _manText,_woManText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +43,7 @@ public class DashboardFragment extends Fragment {
         //final TextView textView = binding.textDashboard;
         //dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        initElement(root);
         initDashboardFragment(root);
 
         return root;
@@ -47,9 +55,28 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
 
-    private void initDashboardFragment(View root){
+    private void initElement(View root){
         viewPager = binding.viewPager2;
-        List<String> items = Arrays.asList("页面1", "页面2", "页面3");
+        _manText=binding.classificationTextMan;
+        _woManText=binding.classificationTexWotMan;
+        _manText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(root.getContext(), "点击"+_manText.getText(),Toast.LENGTH_SHORT).show();
+                viewPager.setCurrentItem(0, true);
+            }
+        });
+        _woManText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(1, true);
+            }
+        });
+    }
+
+    private void initDashboardFragment(View root){
+        List<String> items = new ArrayList<>();
+        items=Arrays.asList(root.getContext().getString(R.string.btn_man),root.getContext().getString(R.string.btn_woman));
         DashboardFragmentPagerAdapter adapter = new DashboardFragmentPagerAdapter(items, R.layout.fragment_classification_man);
         viewPager.setAdapter(adapter);
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -63,6 +90,16 @@ public class DashboardFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 // 页面选中时的回调
+                switch (position){
+                    case 0:
+                        ElementUtil.textStatusClick(root.getContext(),_manText);
+                        ElementUtil.textStatusNormal(root.getContext(),_woManText);
+                        break;
+                    case 1:
+                        ElementUtil.textStatusNormal(root.getContext(),_manText);
+                        ElementUtil.textStatusClick(root.getContext(),_woManText);
+                        break;
+                }
             }
 
             @Override

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Reading" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <!--控件选中效果:purple_500-->
+        <!--控件选中效果:purple_500,COLOR_LINECHAR_GRID,md_blue_300-->
         <item name="colorPrimary">@color/md_blue_300</item>
         <!--背景颜色：translucent-purple_700-->
         <item name="colorPrimaryVariant">@color/translucent</item>

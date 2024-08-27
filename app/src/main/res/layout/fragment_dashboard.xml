@@ -6,22 +6,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment"
-    android:padding="6dp">
+    android:background="@color/md_grey_200"
+    android:padding="2dp">
 
     <RelativeLayout
         android:id="@+id/classification_btn_lay"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="36dp"
+        android:layout_marginStart="6dp">
 
+        <TextView
+            android:id="@+id/classificationTextMan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:text="@string/btn_man"
+            android:textSize="18sp"
+            android:textColor="@color/gray"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/classificationTexWotMan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/btn_woman"
+            android:textSize="18sp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:layout_toEndOf="@+id/classificationTextMan"
+            android:layout_marginStart="2dp"/>
+
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@mipmap/search"
+            android:contentDescription="@string/btn_des"
+            android:layout_marginEnd="6dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/classification_btn_lay"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="2dp"
+        android:background="@drawable/lay_light">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"

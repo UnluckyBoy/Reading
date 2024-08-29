@@ -1,17 +1,13 @@
 package com.cloudstudio.reading.adapter;
 
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cloudstudio.reading.activitys.MainActivity;
-import com.cloudstudio.reading.util.BannerDataInfo;
+import com.cloudstudio.reading.entities.BannerDataInfo;
 import com.youth.banner.adapter.BannerAdapter;
-import com.youth.banner.listener.OnBannerListener;
 
 import java.util.List;
 

@@ -5,24 +5,21 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.cloudstudio.reading.R;
 import com.cloudstudio.reading.adapter.BannerImageAdapter;
 import com.cloudstudio.reading.adapter.ImageItemAdapter;
-import com.cloudstudio.reading.adapter.ItemAdapter;
 import com.cloudstudio.reading.databinding.FragmentHomeBinding;
-import com.cloudstudio.reading.util.BannerDataInfo;
-import com.cloudstudio.reading.util.BookBean;
+import com.cloudstudio.reading.entities.BannerDataInfo;
+import com.cloudstudio.reading.entities.BookBean;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
 import com.youth.banner.listener.OnBannerListener;

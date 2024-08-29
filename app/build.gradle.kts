@@ -58,9 +58,13 @@ dependencies {
     //网络
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     //圆形图像view
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation("androidx.percentlayout:percentlayout:1.0.0")
+
+    //lombok
+    implementation("org.projectlombok:lombok:1.18.32")
 }

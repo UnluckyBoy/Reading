@@ -1,4 +1,4 @@
-package com.cloudstudio.reading.util;
+package com.cloudstudio.reading.entities;
 
 import java.util.List;
 

@@ -11,10 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.cloudstudio.reading.R;
-import com.cloudstudio.reading.util.BookBean;
-import com.cloudstudio.reading.util.GlideRoundCornersTransUtils;
+import com.cloudstudio.reading.entities.BookBean;
 
 import java.util.List;
 

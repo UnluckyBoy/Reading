@@ -19,13 +19,27 @@
         android:hint="@string/hint_password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dp"
-        android:background="@drawable/btn_main"
-        android:text="@string/login_btn"
-        android:textSize="16sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:background="@drawable/btn_main"
+            android:text="@string/btn_login"
+            android:textSize="16sp"/>
+        <Button
+            android:id="@+id/btnLoginCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/btn_main"
+            android:text="@string/btn_cancel"
+            android:textSize="16sp"/>
+    </RelativeLayout>
 
 </LinearLayout>

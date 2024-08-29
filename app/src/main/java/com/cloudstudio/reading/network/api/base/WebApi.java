@@ -12,12 +12,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Retrofit Api基类
  */
 public abstract class WebApi {
+//    OkHttpClient client = new OkHttpClient.Builder()
+//            .addInterceptor(new TokenInterceptor())
+//            .build();
+
     protected Retrofit getApi(String url) {
+        /*使用拦截器获取token*/
         return new Retrofit.Builder()
                 .baseUrl(url)
-//                .client(new OkHttpClient.Builder()
-//                        .addInterceptor(new TokenInterceptor(token))
-//                        .build())
+                .client(new OkHttpClient.Builder()
+                        .addInterceptor(new TokenInterceptor())
+                        .build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

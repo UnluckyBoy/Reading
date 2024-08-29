@@ -12,7 +12,6 @@ import retrofit2.Retrofit;
  */
 public class LoginApi extends WebApi {
     String url="https://42f9f82b.r7.cpolar.cn/api/";
-    //String token="";
     Retrofit retrofit=getApi(url);
 
     @Override

@@ -14,19 +14,18 @@ import okhttp3.Response;
  * @Date 2024/8/29 14:50
  */
 public class TokenInterceptor implements Interceptor {
-    private final String token;
-    public TokenInterceptor(String token) {
-        this.token = token;
-    }
 
     @NonNull
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
-        Request original = chain.request();
-        // 添加token到Header中
-        Request request = original.newBuilder()
-                .header("Authorization", "Bearer " + token)
-                .build();
-        return chain.proceed(request);
+        Response response = chain.proceed(chain.request());
+        // 假设我们只对特定请求的响应感兴趣，这里我们简单地从所有响应中获取token
+        String token = response.header("Authorization");
+        if (token != null && token.startsWith("Bearer ")) {
+            // 这里可以存储token到全局变量、事件总线等
+            // 例如：GlobalState.setToken(token.substring("Bearer ".length()));
+            System.out.println("Received token: " + token);
+        }
+        return response;
     }
 }

@@ -27,6 +27,8 @@
     <string name="btn_des">图片按钮</string>
     <string name="hint_account">账号</string>
     <string name="hint_password">密码</string>
-    <string name="login_btn">登录</string>
+    <string name="btn_login">登录</string>
     <string name="btn_cancel">取消</string>
+    <string name="btn_confirm">确定</string>
+    <string name="editText">请输入...</string>
 </resources>

@@ -14,6 +14,7 @@ public class UserInfoBean {
     private String mPhone;
     private String mEmail;
     private int mLevel;
+    private int mCoin;
     private int mStatus;
     private String mAddressIp;
 
@@ -79,6 +80,14 @@ public class UserInfoBean {
 
     public void setmLevel(int mLevel) {
         this.mLevel = mLevel;
+    }
+
+    public int getmCoin() {
+        return mCoin;
+    }
+
+    public void setmCoin(int mCoin) {
+        this.mCoin = mCoin;
     }
 
     public int getmStatus() {

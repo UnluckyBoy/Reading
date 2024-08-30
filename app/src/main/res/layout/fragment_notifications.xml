@@ -39,6 +39,7 @@
             tools:ignore="LabelFor" />
 
         <ImageView
+            android:id="@+id/levelImage"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:background="@mipmap/vip_on"
@@ -92,7 +93,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/con_text"/>
             <TextView
-                android:id="@+id/con_num"
+                android:id="@+id/coinNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

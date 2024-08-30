@@ -6,12 +6,11 @@ package com.cloudstudio.reading.entities.nertworkBean;
  * @Author Create By matrix
  * @Date 2024/8/29 14:28
  */
-public class LoginBean {
+public class LoginResponseBean {
     private boolean handleType;
     private int handleCode;
-    private String Authorization;
     private String handleMessage;
-    private UserInfoBean handleData;
+    private HandleData handleData;
 
     public boolean isHandleType() {
         return handleType;
@@ -29,14 +28,6 @@ public class LoginBean {
         this.handleCode = handleCode;
     }
 
-    public String getAuthorization() {
-        return Authorization;
-    }
-
-    public void setAuthorization(String authorization) {
-        Authorization = authorization;
-    }
-
     public String getHandleMessage() {
         return handleMessage;
     }
@@ -45,11 +36,11 @@ public class LoginBean {
         this.handleMessage = handleMessage;
     }
 
-    public UserInfoBean getHandleData() {
+    public HandleData getHandleData() {
         return handleData;
     }
 
-    public void setHandleData(UserInfoBean handleData) {
+    public void setHandleData(HandleData handleData) {
         this.handleData = handleData;
     }
 }

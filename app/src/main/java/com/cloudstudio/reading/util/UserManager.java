@@ -39,20 +39,21 @@ public class UserManager {
     }
 
     // 登录并保存用户信息
-    public void login(String account,String head,String name,String sex,String phone,String email,
-                      int level,int status,String ip,String userToken) {
+//    public void login(String account,String head,String name,String sex,String phone,String email,
+//                      int level,int status,String ip,String userToken) {
+    public void login(String userToken,String account) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(KEY_IS_LOGGED_IN, true);
-        editor.putString(KEY_USER_ACCOUNT, account);
-        editor.putString(KEY_USER_HEAD, head);
-        editor.putString(KEY_USER_NAME, name);
-        editor.putString(KEY_USER_SEX, sex);
-        editor.putString(KEY_USER_PHONE, phone);
-        editor.putString(KEY_USER_EMAIL, email);
-        editor.putString(KEY_USER_LEVEL, String.valueOf(level));
-        editor.putString(KEY_USER_STATUS, String.valueOf(status));
-        editor.putString(KEY_USER_IP, ip);
         editor.putString(KEY_USER_TOKEN, userToken.substring(7));
+        editor.putString(KEY_USER_ACCOUNT, account);
+//        editor.putString(KEY_USER_HEAD, head);
+//        editor.putString(KEY_USER_NAME, name);
+//        editor.putString(KEY_USER_SEX, sex);
+//        editor.putString(KEY_USER_PHONE, phone);
+//        editor.putString(KEY_USER_EMAIL, email);
+//        editor.putString(KEY_USER_LEVEL, String.valueOf(level));
+//        editor.putString(KEY_USER_STATUS, String.valueOf(status));
+//        editor.putString(KEY_USER_IP, ip);
         editor.apply();
     }
 
@@ -61,14 +62,14 @@ public class UserManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(KEY_IS_LOGGED_IN, false);
         editor.remove(KEY_USER_ACCOUNT);
-        editor.remove(KEY_USER_HEAD);
-        editor.remove(KEY_USER_NAME);
-        editor.remove(KEY_USER_SEX);
-        editor.remove(KEY_USER_PHONE);
-        editor.remove(KEY_USER_EMAIL);
-        editor.remove(KEY_USER_LEVEL);
-        editor.remove(KEY_USER_STATUS);
-        editor.remove(KEY_USER_IP);
+//        editor.remove(KEY_USER_HEAD);
+//        editor.remove(KEY_USER_NAME);
+//        editor.remove(KEY_USER_SEX);
+//        editor.remove(KEY_USER_PHONE);
+//        editor.remove(KEY_USER_EMAIL);
+//        editor.remove(KEY_USER_LEVEL);
+//        editor.remove(KEY_USER_STATUS);
+//        editor.remove(KEY_USER_IP);
         editor.remove(KEY_USER_TOKEN);
         editor.apply();
     }

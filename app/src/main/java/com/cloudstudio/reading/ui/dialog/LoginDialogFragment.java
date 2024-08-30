@@ -1,9 +1,7 @@
 package com.cloudstudio.reading.ui.dialog;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,20 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.cloudstudio.reading.R;
-import com.cloudstudio.reading.entities.nertworkBean.LoginBean;
-import com.cloudstudio.reading.entities.nertworkBean.UserInfoBean;
+import com.cloudstudio.reading.entities.nertworkBean.LoginResponseBean;
 import com.cloudstudio.reading.network.api.LoginApi;
 import com.cloudstudio.reading.network.service.LoginService;
-import com.cloudstudio.reading.ui.notifications.NotificationsViewModel;
-import com.cloudstudio.reading.util.DipPx;
 import com.cloudstudio.reading.util.ElementUtil;
-import com.cloudstudio.reading.util.GlideRoundCornersTransUtils;
 import com.cloudstudio.reading.util.UserManager;
 
 import java.io.IOException;
@@ -94,25 +84,22 @@ public class LoginDialogFragment extends DialogFragment {
         LoginApi loginApi=new LoginApi();
         LoginService loginService=loginApi.getService();
         //UserManager.getInstance(root.getContext()).getUserToken()
-        Call<LoginBean> call_login=loginService.getState("",name,pwd);
-        call_login.enqueue(new Callback<LoginBean>() {
+        Call<LoginResponseBean> call_login=loginService.getState("",name,pwd);
+        call_login.enqueue(new Callback<LoginResponseBean>() {
             @Override
-            public void onResponse(Call<LoginBean> call, @NonNull Response<LoginBean> response) {
+            public void onResponse(@NonNull Call<LoginResponseBean> call, @NonNull Response<LoginResponseBean> response) {
                 if(response.body().getHandleCode()==200){
-                    Toast.makeText(root.getContext(),"已登录:"+response.body().getHandleData().getmAccount(),Toast.LENGTH_SHORT).show();
-                    UserManager.getInstance(root.getContext()).login(response.body().getHandleData().getmAccount(),
-                            response.body().getHandleData().getmHead(),response.body().getHandleData().getmName(),
-                            response.body().getHandleData().getmSex(),response.body().getHandleData().getmPhone(),
-                            response.body().getHandleData().getmEmail(),response.body().getHandleData().getmLevel(),
-                            response.body().getHandleData().getmStatus(),response.body().getHandleData().getmAddressIp(),
-                            response.body().getAuthorization());
+                    Toast.makeText(root.getContext(),"已登录:"+response.body().getHandleData().getAccount(),Toast.LENGTH_SHORT).show();
+                    UserManager.getInstance(root.getContext()).login(
+                            response.body().getHandleData().getAuthorization(),
+                            response.body().getHandleData().getAccount());
 //                    Toast.makeText(root.getContext(),"已登录:"+UserManager.getInstance(root.getContext()).getUserAccount(),Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<LoginBean> call, Throwable throwable) {
-
+            public void onFailure(@NonNull Call<LoginResponseBean> call, @NonNull Throwable throwable) {
+                Toast.makeText(root.getContext(),"网络异常!",Toast.LENGTH_SHORT).show();
             }
         });
     }
